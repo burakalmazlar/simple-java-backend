@@ -8,6 +8,6 @@ RUN mkdir -p /usr/src/app
 
 WORKDIR /usr/src/app
 
-COPY target/hello-world-${REVISION}.jar hello.jar
+COPY target/simple-java-backend-${REVISION}.jar app.jar
 
-CMD ["java","-jar","hello.jar"]
+CMD ["java","-jar","app.jar"]
