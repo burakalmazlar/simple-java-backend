@@ -11,6 +11,7 @@ public class Person {
     @GeneratedValue
     private Long id;
     private String name;
+    private String password;
     private Integer age;
 
     public Long getId() {
@@ -37,12 +38,12 @@ public class Person {
         this.age = age;
     }
 
-    public Person() {
+    public String getPassword() {
+        return password;
     }
 
-    public Person(String name, Integer age) {
-        this.name = name;
-        this.age = age;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override

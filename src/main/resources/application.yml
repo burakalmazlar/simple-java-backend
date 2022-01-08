@@ -10,3 +10,5 @@ spring:
       ddl-auto: create-drop
 server:
   forward-headers-strategy: native
+jwt:
+  secret: Ympr
