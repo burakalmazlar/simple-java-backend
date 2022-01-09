@@ -12,3 +12,7 @@ server:
   forward-headers-strategy: native
 jwt:
   secret: Ympr
+web:
+  configuration:
+    allowed:
+      origin: "http://localhost:3000"

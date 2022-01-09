@@ -1,5 +1,7 @@
-package com.simple.backend;
+package com.simple.backend.controller;
 
+import com.simple.backend.model.Person;
+import com.simple.backend.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
@@ -8,25 +10,17 @@ import java.util.List;
 
 
 @RestController
-public class PersonRestService {
+public class PersonController {
 
     PersonRepository personRepository;
-
-    PasswordEncoder passwordEncoder;
 
     @Autowired
     public void setPersonRepository(PersonRepository personRepository) {
         this.personRepository = personRepository;
     }
 
-    @Autowired
-    public void setPasswordEncoder(PasswordEncoder passwordEncoder) {
-        this.passwordEncoder = passwordEncoder;
-    }
-
     @PostMapping("/person/save")
     public Person save(@RequestBody Person person) {
-        person.setPassword(passwordEncoder.encode(person.getPassword()));
         return personRepository.save(person);
     }
 

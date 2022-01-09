@@ -1,9 +1,6 @@
-package com.simple.backend;
+package com.simple.backend.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.net.InetAddress;
@@ -11,7 +8,7 @@ import java.net.UnknownHostException;
 
 @SuppressWarnings("ALL")
 @RestController
-public class RootRestService {
+public class RootController {
 
     private final String LOCALHOST_IPV4 = "127.0.0.1";
     private final String LOCALHOST_IPV6 = "0:0:0:0:0:0:0:1";

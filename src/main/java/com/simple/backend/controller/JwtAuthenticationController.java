@@ -19,10 +19,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import static com.simple.backend.config.JwtTokenUtil.JWT_TOKEN_VALIDITY;
 
 
 @RestController
-@CrossOrigin
 public class JwtAuthenticationController {
 
     @Autowired

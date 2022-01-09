@@ -1,4 +1,4 @@
-package com.simple.backend;
+package com.simple.backend.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,7 +11,6 @@ public class Person {
     @GeneratedValue
     private Long id;
     private String name;
-    private String password;
     private Integer age;
 
     public Long getId() {
@@ -38,13 +37,6 @@ public class Person {
         this.age = age;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
     @Override
     public boolean equals(Object o) {
