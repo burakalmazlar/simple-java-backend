@@ -63,7 +63,8 @@ jobs:
         host: ${{ secrets.AWS_HOST }}
         key: ${{ secrets.SSH_KEY }}
         script: |
+          docker system prune --all --force --volumes
           export CNT=$(docker container ls --filter name=simple_java_backend --format '{{.Names}}')
-          if [ $CNT == "hello" ]; then docker container rm -f simple_java_backend; fi
+          if [ $CNT == "simple_java_backend" ]; then docker container rm -f simple_java_backend; fi
           docker container run -d -p 8080:8080 --name simple_java_backend burakalmazlar/simple-java-backend:${{ steps.autotag.outputs.new_tag }}
 
