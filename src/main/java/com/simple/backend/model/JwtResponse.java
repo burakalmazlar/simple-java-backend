@@ -1,9 +1,6 @@
 package com.simple.backend.model;
-import com.simple.backend.config.JwtTokenUtil;
 
 import java.io.Serializable;
-
-import static com.simple.backend.config.JwtTokenUtil.JWT_TOKEN_VALIDITY;
 
 public class JwtResponse implements Serializable {
 
@@ -12,7 +9,7 @@ public class JwtResponse implements Serializable {
 
     public JwtResponse(String jwttoken) {
         this.jwttoken = jwttoken;
-        this.expiresIn = JWT_TOKEN_VALIDITY;
+        this.expiresIn = 10 * 60_000;
     }
 
     public String getToken() {
