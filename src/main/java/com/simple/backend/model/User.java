@@ -1,18 +1,24 @@
 package com.simple.backend.model;
 
+import lombok.Builder;
+
 import javax.persistence.*;
+import javax.validation.constraints.*;
 import java.util.Objects;
 
 @Entity
+@Builder
 public class User {
     @Id
     @GeneratedValue
     private Long id;
 
     @Column(unique = true, nullable = false)
+
     private String username;
 
     @Column(nullable = false)
+
     private String password;
 
     public Long getId() {
